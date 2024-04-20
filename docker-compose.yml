@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  spring-app:
+    image: spring-rest-api
+    ports:
+      - "9090:8080"
+    depends_on:
+      - mysql-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/DentalSurgeryDB?autoReconnect=true&allowPublicKeyRetrieval=true&useSSl=false
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: root
+
+  mysql-db:
+    image: mysql:latest
+    environment:
+      DATABASE_HOST: mysql-db
+      DATABASE_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: DentalSurgeryDB
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: root
