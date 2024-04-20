@@ -8,9 +8,9 @@ services:
     depends_on:
       - mysql-db
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/DentalSurgeryDB?autoReconnect=true&allowPublicKeyRetrieval=true&useSSl=false
-      SPRING_DATASOURCE_USERNAME: admin
-      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/dentistDB?autoReconnect=true&allowPublicKeyRetrieval=true&useSSl=false
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: K@rung1am
 
   mysql-db:
     image: mysql:latest
@@ -18,6 +18,6 @@ services:
       DATABASE_HOST: mysql-db
       DATABASE_PORT: 3306
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: DentalSurgeryDB
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: dentistDB
+      MYSQL_USER: root
+      MYSQL_PASSWORD: dentistDB
